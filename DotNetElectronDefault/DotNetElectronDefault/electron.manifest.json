@@ -1,0 +1,58 @@
+{
+  "executable": "DotNetElectronDefault",
+  "splashscreen": {
+    "imageFile": ""
+  },
+  "name": "DotNetElectronDefault",
+  "author": {
+    "name": "name",
+    "email": "email@email.ru"
+  },
+  "singleInstance": false,
+  "environment": "Production",
+  "build": {
+    "appId": "com.DotNetElectronDefault.app",
+    "productName": "DotNetElectronDefault",
+    "copyright": "Copyright © 2020",
+    "buildVersion": "1.0.0",
+    "compression": "maximum",
+    "directories": {
+      "output": "../../../bin/Desktop"
+    },
+    "extraResources": [
+      {
+        "from": "./bin",
+        "to": "bin",
+        "filter": [ "**/*" ]
+      }
+    ],
+    "files": [
+      {
+        "from": "./ElectronHostHook/node_modules",
+        "to": "ElectronHostHook/node_modules",
+        "filter": [ "**/*" ]
+      },
+      "**/*"
+    ],
+    "linux": {
+        "icon": "../../../wwwroot/fire.png",
+        "maintainer": "Stackify",
+        "category": "electron-app",
+        "executableName": "Prefix",
+        "target": [ "deb", "rpm" ]
+      },
+      "deb": {
+        "depends": [ "libnss3" ],
+        "fpm": [
+          "--name=Prefix"
+        ]
+      },
+      "rpm": {
+        "depends": [ "libXScrnSaver", "libnss3" ],
+        "fpm": [
+          "--name=Prefix",
+          "--iteration=1.0.0"
+        ]
+      }
+  }
+}
