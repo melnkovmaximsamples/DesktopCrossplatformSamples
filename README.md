@@ -15,3 +15,6 @@
 
 ### Запуск без публикации на основе исходников (из директории с .csproj)
 **dotnet run**
+
+![image](https://user-images.githubusercontent.com/57220464/194752787-b61cef52-2f49-4204-a818-95d4ef3d6ae2.png)
+
