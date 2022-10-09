@@ -12,3 +12,6 @@
 
 ### Публикация и запуск в релизе
 **dotnet publish --configuration Release --runtime ubuntu.20.04-x64 --output publish**
+
+### Запуск без публикации на основе исходников (из директории с .csproj)
+**dotnet run**
