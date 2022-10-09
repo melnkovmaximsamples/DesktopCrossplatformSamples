@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaWpf2", "AvaloniaWpf2\AvaloniaWpf2.csproj", "{BA5E1C3A-E8D6-45E5-A0B1-45E44366AEE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaWpf", "AvaloniaWpf\AvaloniaWpf.csproj", "{BA5E1C3A-E8D6-45E5-A0B1-45E44366AEE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

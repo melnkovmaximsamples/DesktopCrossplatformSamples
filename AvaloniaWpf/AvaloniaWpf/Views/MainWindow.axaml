@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:AvaloniaWpf.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaWpf.Views.MainWindow"
+        DataContext="{Binding MainWindowViewModel, Source={StaticResource ViewModelLocator}}"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MainWindow">
+
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid MaxWidth="600" HorizontalAlignment="Center">
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0" Items="{Binding Messages}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="Green" CornerRadius="4" Padding="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Column="0" Orientation="Vertical">
+                                <TextBlock Text="Id"/>
+                                <TextBlock Text="Author"/>
+                                <TextBlock Text="Text"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <TextBlock Text="{Binding Id}"/>
+                                <TextBox Text="{Binding Author}"/>
+                                <TextBox Text="{Binding Text}"/>
+                            </StackPanel>
+                            
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+            
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Button Command="{Binding Commands.CreateMessageCommand}">Создать сообщение</Button>
+            <Button Command="{Binding Commands.LoadFromDbCommand}">Загрузить из БД</Button>
+            <Button Command="{Binding Commands.SaveToDbCommand}">Сохранить в БД</Button>
+            <Button Command="{Binding Commands.ClearMessagesCommand}">Удалить все (на вьюхе)</Button>
+        </StackPanel>
+    </Grid>
+
+</Window>
