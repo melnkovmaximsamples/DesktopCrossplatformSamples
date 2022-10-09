@@ -5,10 +5,10 @@
 #### Инициализация Electron (уже выполнено)
 **electronize init**
 
-#### Запуск без сбора bundle
+#### Запуск без сбора bundle (обертка над командой из package.json)
 **npm run start**
 
-#### Сборка bundle
+#### Сборка bundle (обертка над командами из package.json)
 **npm run build-windows** - для windows
 **npm run build-linux** - для linux
 
