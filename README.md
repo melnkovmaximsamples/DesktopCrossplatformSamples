@@ -26,7 +26,7 @@
 #### Сборка + installer 
 **electronize build /target linux** (linux можно заменить на win/osx в зависимости от ОС)
 
-![image](https://user-images.githubusercontent.com/57220464/195272827-8795c9e0-c77e-487d-b235-6b0f9e6ca57f.png)
+![image](https://user-images.githubusercontent.com/57220464/195272920-a54926f1-3755-4334-a69d-515557cf9119.png)
 
 ## AvaloniaWpf Sample
 
