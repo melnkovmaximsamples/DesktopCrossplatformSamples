@@ -1,6 +1,6 @@
 # DesktopCrossplatformSamples
 
-## React electron app
+## ReactElectron. React + Electron
 
 #### Инициализация Electron (уже выполнено)
 **electronize init**
@@ -17,6 +17,10 @@
 * Wait-on - необходим для ожидания запуска React на порте 3000
 * Electron-builder - необходим для сборки под различные ОС, включает также автоматическое обновление приложения из коробки
 * Cross-env - необходим для установки переменных окружения одной универсальной командой для всех ОС
+
+## AspNetElectron. ASP.NET Core + Electron
+
+
 
 ## AvaloniaWpf Sample
 
