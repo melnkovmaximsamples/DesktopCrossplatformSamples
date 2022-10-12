@@ -14,7 +14,7 @@ services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 services.AddControllersWithViews();
 services.AddRouting(options => options.LowercaseUrls = true);
 
-if (launchProfile is not null && launchProfile != "Kestrel.Web")
+if (launchProfile != "Kestrel.Web")
 {
     webHost.UseElectron(args);
 

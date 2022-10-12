@@ -3,17 +3,17 @@ using ElectronNET.API.Entities;
 
 namespace AspNetElectron.HostedServices;
 
-public class ElectronHostedService: IHostedService
+public class ElectronHostedService : IHostedService
 {
     public Task StartAsync(CancellationToken _)
     {
-        var windowsOptions = new BrowserWindowOptions()
+        var windowOptions = new BrowserWindowOptions()
         {
             Width = 920,
             Height = 800
         };
-        
-        return Electron.WindowManager.CreateWindowAsync(windowsOptions);
+
+        return Electron.WindowManager.CreateWindowAsync(windowOptions);
     }
 
     public Task StopAsync(CancellationToken _)
