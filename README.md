@@ -2,9 +2,6 @@
 
 ## ReactElectron. React + Electron
 
-#### Инициализация Electron (уже выполнено)
-**electronize init**
-
 #### Запуск без сбора bundle (обертка над командой из package.json)
 **npm run start**
 
@@ -20,7 +17,14 @@
 
 ## AspNetElectron. ASP.NET Core + Electron
 
+#### Инициализация Electron (уже выполнено, создает manifest)
+**electronize init**
 
+#### Запуск без сборки
+**electronize start**
+
+#### Сборка + installer 
+**electronize build /target linux** (linux можно заменить на win/osx в зависимости от ОС)
 
 ## AvaloniaWpf Sample
 
