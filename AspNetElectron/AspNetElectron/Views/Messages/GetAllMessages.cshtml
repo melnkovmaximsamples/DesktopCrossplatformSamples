@@ -1,0 +1,20 @@
+﻿@using AspNetElectron.ViewModels
+@model MessagesIndexViewModel
+
+@{
+    ViewBag.Title = "Messages";
+    Layout = "_Layout";
+}
+    
+<div class="messages">
+    @foreach (var message in Model.Messages)
+    {
+        <div class="messages__item">
+            <p><span>Id</span> @message.Id</p>
+
+            <p><span>Author</span> @message.Author</p>
+
+            <p><span>Text</span> @message.Text</p>
+        </div>
+    }
+</div>

@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "Kestrel.Electron": {
+      "commandName": "Executable",
+      "executablePath": "electronize",
+      "commandLineArgs": "start",
+      "workingDirectory": "$(ProjectDir)",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_PROFILE": "Kestrel.Electron"
+      }
+    },
+    "Kestrel.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_PROFILE": "Kestrel.Web"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7242;http://localhost:5123"
+    }
+  }
+}

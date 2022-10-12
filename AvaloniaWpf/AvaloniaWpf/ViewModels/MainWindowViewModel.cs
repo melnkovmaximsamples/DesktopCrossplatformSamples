@@ -11,26 +11,26 @@ namespace AvaloniaWpf.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private readonly IRepository<Message> _messageRepository;
-        public ObservableCollection<Message> Messages { get; init; }
+        private readonly IRepository<MessageEntity> _messageRepository;
+        public ObservableCollection<MessageEntity> Messages { get; init; }
         public MainWindowCommands Commands { get; init; }
 
         public MainWindowViewModel()
         {
-            _messageRepository = IoC.Resolve<IRepository<Message>>();
-            Messages = new ObservableCollection<Message>();
+            _messageRepository = IoC.Resolve<IRepository<MessageEntity>>();
+            Messages = new ObservableCollection<MessageEntity>();
             Commands = new MainWindowCommands()
             {
                 CreateMessageCommand = ReactiveCommand.Create(CreateMessage),
-                RemoveMessageCommand = ReactiveCommand.Create<Message>(RemoveMessage),
+                RemoveMessageCommand = ReactiveCommand.Create<MessageEntity>(RemoveMessage),
                 ClearMessagesCommand = ReactiveCommand.Create(ClearMessages),
                 SaveToDbCommand = ReactiveCommand.CreateFromTask(SaveToDb),
                 LoadFromDbCommand = ReactiveCommand.CreateFromTask(LoadFromDb)
             };
         }
 
-        private void CreateMessage() => Messages.Add(new Message() { Id = Guid.NewGuid() });
-        private void RemoveMessage(Message message) => Messages.Remove(message);
+        private void CreateMessage() => Messages.Add(new MessageEntity() { Id = Guid.NewGuid() });
+        private void RemoveMessage(MessageEntity message) => Messages.Remove(message);
         private void ClearMessages() => Messages.Clear();
         private async Task SaveToDb()
         {

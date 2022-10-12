@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/layout.css">
+    <link rel="stylesheet" href="~/AspNetElectron.styles.css">
+</head>
+<body>
+
+    <div class="menu">
+        <div class="links">
+            <a class="links__item" asp-controller="Messages" asp-action="GetAllMessages">Все сообщения</a>
+            <a class="links__item" asp-controller="Messages" asp-action="AddMessage">Добавить сообщение</a>
+            <form asp-controller="Messages" asp-action="RemoveAllMessages">
+                <button class="links__item">Удалить все</button>
+            </form>
+        </div>
+
+        @RenderBody()
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

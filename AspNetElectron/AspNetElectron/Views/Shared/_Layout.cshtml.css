@@ -1,0 +1,36 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu {
+    margin: 0 auto;
+    width: 900px;
+    height: 100%;
+    min-height: 100vh;
+    background-color: bisque;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+::deep .links__item:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+::deep .links__item {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    background-color: #fff;
+    padding: 14px 28px;
+    cursor: pointer;
+    display: inline-block;
+}
