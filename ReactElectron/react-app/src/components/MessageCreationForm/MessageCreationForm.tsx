@@ -1,18 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { createMessage } from "../../services/messagesRequestSender";
 import styles from './MessageCreationForm.module.css';
 
 const MessageCreationForm = () => {
+    const navigate = useNavigate();
     const [author, setAuthor] = useState<string>('');
     const [text, setText] = useState<string>('');
-    const createMessage = (e: React.FormEvent) => {
+    const handleCreateMessage = (e: React.FormEvent) => {
         e.preventDefault();
 
-
+        createMessage({ id: '', author: author, text: text });
+        navigate('/');
     };
 
     return (
-        <form className={styles.form} onSubmit={createMessage}>
+        <form className={styles.form} onSubmit={handleCreateMessage}>
             <div className={styles.flexContainer}>
                 <label className={styles.label}>Author</label>
                 <input className={styles.input} value={author} onChange={(e) => setAuthor(e.currentTarget.value)} type="text"/>

@@ -7,15 +7,15 @@ import MessageCreationForm from "../MessageCreationForm/MessageCreationForm";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 
-function App() {
-    const Container = styled.div`
-        margin: 0 auto;
-        width: 900px;
-        height: 100%;
-        min-height: 100vh;
-        background-color: bisque;
-    `;
+const Container = styled.div`
+    margin: 0 auto;
+    width: 900px;
+    height: 100%;
+    min-height: 100vh;
+    background-color: bisque;
+`;
 
+function App() {
     return (
         <Container>
             <Router>

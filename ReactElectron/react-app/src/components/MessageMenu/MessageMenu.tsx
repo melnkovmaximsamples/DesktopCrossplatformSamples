@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { removeAllMessages } from "../../services/messagesRequestSender";
 
 const MessageMenu = () => {
     const Container = styled.div`
@@ -26,6 +27,7 @@ const MessageMenu = () => {
         }
     `;
 
+    const navigate = useNavigate();
     const Link = styled(NavLink)`
         ${buttonStyles}
     `;
@@ -34,7 +36,9 @@ const MessageMenu = () => {
     `;
 
     const handleRemoveAll = () => {
-        
+        removeAllMessages();
+
+        navigate('/', { state: [] });
     }
 
     return (
